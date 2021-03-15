@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react';
 import { graphql, Link } from 'gatsby';
 
-import PostTemplate from '../../../templates/post-template';
-import ProjectTemplate from '../../../templates/project-template';
+import PostsTemplate from '../../../templates/posts-template';
+import ProjectsTemplate from '../../../templates/projects-template';
 
 const Mdx = ({
   data,
@@ -13,8 +13,8 @@ const Mdx = ({
   }
 }) => {
   const templates = {
-    post: <PostTemplate data={data} />,
-    project: <ProjectTemplate data={data} />
+    posts: <PostsTemplate data={data} />,
+    projects: <ProjectsTemplate data={data} />
   };
 
   return (
