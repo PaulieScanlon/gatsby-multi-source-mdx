@@ -5,7 +5,7 @@ import { MDXProvider } from '@mdx-js/react';
 const PostTemplate = ({
   data: {
     mdx: {
-      frontmatter: { id, title, variant, tags },
+      frontmatter: { title, variant, tags },
       body
     }
   }
@@ -13,8 +13,7 @@ const PostTemplate = ({
   return (
     <main>
       <h1>{`title - ${title}`}</h1>
-      <h2>{`id - ${id}`}</h2>
-      <h3>{`variant - ${variant}`}</h3>
+      <h2>{`variant - ${variant}`}</h2>
       <ul>
         tags
         {tags

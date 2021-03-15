@@ -5,7 +5,7 @@ import { MDXProvider } from '@mdx-js/react';
 const ProjectTemplate = ({
   data: {
     mdx: {
-      frontmatter: { id, title, variant, client },
+      frontmatter: { title, variant, client },
       body
     }
   }
@@ -13,9 +13,8 @@ const ProjectTemplate = ({
   return (
     <main>
       <h1>{`title - ${title}`}</h1>
-      <h2>{`client - ${client}`}</h2>
-      <h3>{`id - ${id}`}</h3>
-      <h4>{`variant - ${variant}`}</h4>
+      <h2>{`variant - ${variant}`}</h2>
+      <h3>{`client - ${client}`}</h3>
       <MDXProvider>
         <MDXRenderer>{body}</MDXRenderer>
       </MDXProvider>

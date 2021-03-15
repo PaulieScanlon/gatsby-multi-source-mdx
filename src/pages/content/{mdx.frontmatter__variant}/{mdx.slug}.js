@@ -27,7 +27,6 @@ export const query = graphql`
     mdx(id: { eq: $id }) {
       id
       frontmatter {
-        id
         title
         variant
         tags
