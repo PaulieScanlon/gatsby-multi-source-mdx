@@ -1,9 +1,8 @@
 import React from 'react';
-import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { MDXProvider } from '@mdx-js/react';
 
-const Mdx = ({
+const ProjectTemplate = ({
   data: {
     mdx: {
       frontmatter: { id, title, variant, client },
@@ -24,19 +23,4 @@ const Mdx = ({
   );
 };
 
-export const query = graphql`
-  query($id: String) {
-    mdx(id: { eq: $id }) {
-      id
-      frontmatter {
-        id
-        title
-        variant
-        client
-      }
-      body
-    }
-  }
-`;
-
-export default Mdx;
+export default ProjectTemplate;
