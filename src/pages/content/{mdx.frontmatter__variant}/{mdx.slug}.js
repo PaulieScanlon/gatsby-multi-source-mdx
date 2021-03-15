@@ -4,7 +4,7 @@ import { graphql, Link } from 'gatsby';
 import PostsTemplate from '../../../templates/posts-template';
 import ProjectsTemplate from '../../../templates/projects-template';
 
-const Mdx = ({
+const MdxPage = ({
   data,
   data: {
     mdx: {
@@ -40,4 +40,4 @@ export const query = graphql`
   }
 `;
 
-export default Mdx;
+export default MdxPage;
