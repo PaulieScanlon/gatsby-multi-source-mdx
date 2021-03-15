@@ -3,16 +3,16 @@ import { Link, graphql, useStaticQuery } from 'gatsby';
 
 const IndexPage = () => {
   const {
-    allMdx: { edges }
+    allSitePage: { edges }
   } = useStaticQuery(graphql`
     query {
-      allMdx {
+      allSitePage(filter: { path: { regex: "//content//" } }) {
         edges {
           node {
-            slug
-            frontmatter {
-              title
+            context {
+              slug
             }
+            path
           }
         }
       }
@@ -23,16 +23,16 @@ const IndexPage = () => {
     <main>
       <h1>Index Page</h1>
       <ul>
-        allMdx
+        <h2>content</h2>
         {edges.map((item, index) => {
           const {
-            slug,
-            frontmatter: { title }
+            context: { slug },
+            path
           } = item.node;
 
           return (
             <li key={index}>
-              <Link to={slug}>{title}</Link>
+              <Link to={path}>{slug}</Link>
             </li>
           );
         })}

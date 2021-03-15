@@ -1,5 +1,5 @@
-import React from 'react';
-import { graphql } from 'gatsby';
+import React, { Fragment } from 'react';
+import { graphql, Link } from 'gatsby';
 
 import PostTemplate from '../../../templates/post-template';
 import ProjectTemplate from '../../../templates/project-template';
@@ -12,14 +12,17 @@ const Mdx = ({
     }
   }
 }) => {
-  if (variant === 'post') {
-    return <PostTemplate data={data} />;
-  }
-  if (variant === 'project') {
-    return <ProjectTemplate data={data} />;
-  }
+  const templates = {
+    post: <PostTemplate data={data} />,
+    project: <ProjectTemplate data={data} />
+  };
 
-  return null;
+  return (
+    <Fragment>
+      <Link to="/">Back</Link>
+      {templates[variant] ? templates[variant] : null}
+    </Fragment>
+  );
 };
 
 export const query = graphql`
