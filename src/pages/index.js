@@ -23,7 +23,7 @@ const IndexPage = () => {
     <main>
       <h1>Index Page</h1>
       <ul>
-        <h2>content</h2>
+        <h2>content links</h2>
         {edges.map((item, index) => {
           const {
             context: { slug },

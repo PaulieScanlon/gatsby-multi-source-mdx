@@ -3,15 +3,13 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `posts`,
-        path: `${__dirname}/src/mdx/posts`
+        path: `${__dirname}/src/things/posts`
       }
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `projects`,
-        path: `${__dirname}/src/mdx/projects`
+        path: `${__dirname}/src/things/projects`
       }
     },
     `gatsby-plugin-mdx`
